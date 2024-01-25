@@ -140,10 +140,9 @@ class Accordion extends StatelessWidget with CommonParams {
   @override
   build(context) {
     final listCtrl = Get.put(ListController(), tag: hashCode.toString());
-    final sep = separator ?? Container();
 
     return ListView.separated(
-      separatorBuilder: (context, index) => sep,
+      separatorBuilder: (context, index) => separator ?? Container(),
       itemCount: children.length,
       controller: listCtrl.controller,
       shrinkWrap: true,
