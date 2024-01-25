@@ -113,6 +113,7 @@ class Accordion extends StatelessWidget with CommonParams {
     this.headerBorderWidth = headerBorderWidth;
     this.headerBorderRadius = headerBorderRadius;
     this.headerBorderRadiusOpened = headerBorderRadiusOpened;
+    this.separator = separator;
     this.leftIcon = leftIcon;
     this.rightIcon = rightIcon;
     SectionController.flipLeftIconIfOpen = flipLeftIconIfOpen!;
