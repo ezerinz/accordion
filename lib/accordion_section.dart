@@ -181,6 +181,7 @@ class AccordionSection extends StatelessWidget with CommonParams {
   @override
   build(context) {
     final borderRadius = headerBorderRadius ?? BorderRadius.zero;
+    final borderRaiudsOpened = headerBorderRadiusOpened ?? BorderRadius.zero;
     final contentBorderRadius = this.contentBorderRadius ?? 10;
 
     return Obx(
@@ -188,9 +189,7 @@ class AccordionSection extends StatelessWidget with CommonParams {
         key: uniqueKey,
         children: [
           InkWell(
-            borderRadius: _isOpen
-                ? headerBorderRadiusOpened ?? borderRadius
-                : borderRadius,
+            borderRadius: _isOpen ? borderRaiudsOpened : borderRadius,
             // borderRadius: BorderRadius.vertical(
             //   top: Radius.circular(borderRadius),
             //   bottom: Radius.circular(_isOpen ? 0 : borderRadius),
@@ -237,9 +236,7 @@ class AccordionSection extends StatelessWidget with CommonParams {
                         ? headerBackgroundColorOpened
                         : headerBackgroundColor) ??
                     Theme.of(context).primaryColor,
-                borderRadius: _isOpen
-                    ? headerBorderRadiusOpened ?? borderRadius
-                    : borderRadius,
+                borderRadius: _isOpen ? headerBorderRadiusOpened : borderRadius,
                 // borderRadius: BorderRadius.vertical(
                 //   top: Radius.circular(borderRadius),
                 //   bottom: Radius.circular(_isOpen ? 0 : borderRadius),
