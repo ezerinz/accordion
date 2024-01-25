@@ -62,7 +62,7 @@ class AccordionSection extends StatelessWidget with CommonParams {
     Color? headerBorderColor,
     Color? headerBorderColorOpened,
     double? headerBorderWidth,
-    double? headerBorderRadius,
+    BorderRadius? headerBorderRadius,
     EdgeInsets? headerPadding,
     Widget? leftIcon,
     Widget? rightIcon,
@@ -178,7 +178,7 @@ class AccordionSection extends StatelessWidget with CommonParams {
 
   @override
   build(context) {
-    final borderRadius = headerBorderRadius ?? 10;
+    final borderRadius = headerBorderRadius ?? BorderRadius.zero;
     final contentBorderRadius = this.contentBorderRadius ?? 10;
 
     return Obx(
@@ -186,10 +186,11 @@ class AccordionSection extends StatelessWidget with CommonParams {
         key: uniqueKey,
         children: [
           InkWell(
-            borderRadius: BorderRadius.vertical(
-              top: Radius.circular(borderRadius),
-              bottom: Radius.circular(_isOpen ? 0 : borderRadius),
-            ),
+            borderRadius: borderRadius,
+            // borderRadius: BorderRadius.vertical(
+            //   top: Radius.circular(borderRadius),
+            //   bottom: Radius.circular(_isOpen ? 0 : borderRadius),
+            // ),
             onTap: () {
               final listCtrl = Get.put(ListController(), tag: accordionId);
 
@@ -232,10 +233,11 @@ class AccordionSection extends StatelessWidget with CommonParams {
                         ? headerBackgroundColorOpened
                         : headerBackgroundColor) ??
                     Theme.of(context).primaryColor,
-                borderRadius: BorderRadius.vertical(
-                  top: Radius.circular(borderRadius),
-                  bottom: Radius.circular(_isOpen ? 0 : borderRadius),
-                ),
+                borderRadius: borderRadius,
+                // borderRadius: BorderRadius.vertical(
+                //   top: Radius.circular(borderRadius),
+                //   bottom: Radius.circular(_isOpen ? 0 : borderRadius),
+                // ),
                 border: Border.all(
                   color:
                       (_isOpen ? headerBorderColorOpened : headerBorderColor) ??

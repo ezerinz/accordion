@@ -60,7 +60,7 @@ class Accordion extends StatelessWidget with CommonParams {
     Color? headerBorderColor,
     Color? headerBorderColorOpened,
     double? headerBorderWidth,
-    double? headerBorderRadius,
+    BorderRadius? headerBorderRadius,
     Widget? leftIcon,
     Widget? rightIcon,
     Widget? header,

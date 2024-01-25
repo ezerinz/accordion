@@ -46,7 +46,7 @@ mixin CommonParams {
   /// width of header border. Set to 0 if no header border is desired.
   late final double? headerBorderWidth;
 
-  late final double? headerBorderRadius;
+  late final BorderRadius? headerBorderRadius;
   late final EdgeInsets? headerPadding;
   late final Widget? leftIcon, rightIcon;
   late final Color? contentBackgroundColor;
