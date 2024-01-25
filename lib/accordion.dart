@@ -62,6 +62,7 @@ class Accordion extends StatelessWidget with CommonParams {
     double? headerBorderWidth,
     BorderRadius? headerBorderRadius,
     BorderRadius? headerBorderRadiusOpened,
+    Widget? separator,
     Widget? leftIcon,
     Widget? rightIcon,
     Widget? header,
@@ -138,8 +139,10 @@ class Accordion extends StatelessWidget with CommonParams {
   @override
   build(context) {
     final listCtrl = Get.put(ListController(), tag: hashCode.toString());
+    final sep = separator ?? Container();
 
-    return ListView.builder(
+    return ListView.separated(
+      separatorBuilder: (context, index) => sep,
       itemCount: children.length,
       controller: listCtrl.controller,
       shrinkWrap: true,
